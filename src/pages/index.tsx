@@ -2,7 +2,6 @@ import { GetServerSidePropsContext } from 'next';
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -38,11 +37,6 @@ export default function HomePage() {
               A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
               Import, Seo, Link component, pre-configured with Husky{' '}
             </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
 
             <ButtonLink className='mt-6' href='/components' variant='light'>
               See all components
@@ -75,7 +69,7 @@ export default function HomePage() {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const res = await fetch('/api/*');
+  const res = await fetch('http://localhost:3001/api/hello');
   const data = await res.json();
   // eslint-disable-next-line no-console
   console.log({ data });

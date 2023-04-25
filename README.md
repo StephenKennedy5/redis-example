@@ -85,6 +85,12 @@ docker-compose up --build -d redis
 npm run dev
 ```
 
+Check redis clients
+
+```bash
+docker exec -it redis_example_dev redis-cli info | grep clients
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
 
 ### 4. Change defaults
