@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  redis:
+    container_name: redis_example_dev
+    image: redis:6.2
+    networks:
+      - redis_example_net
+    ports:
+      - "6379:6379"
+    volumes:
+      - cache:/data
+
+volumes:
+  cache: {}
+
+networks:
+  redis_example_net:
+    name: redis_example_net
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

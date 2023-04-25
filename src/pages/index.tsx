@@ -1,3 +1,4 @@
+import { GetServerSidePropsContext } from 'next';
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
@@ -71,4 +72,15 @@ export default function HomePage() {
       </main>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const res = await fetch('/api/*');
+  const data = await res.json();
+  // eslint-disable-next-line no-console
+  console.log({ data });
+
+  return {
+    props: {},
+  };
 }

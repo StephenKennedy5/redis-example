@@ -73,7 +73,7 @@ You can also check all of the **details and demos** on my blog post:
 It is encouraged to use **yarn** so the husky hooks can work properly.
 
 ```bash
-yarn install
+npm install
 ```
 
 ### 3. Run the development server
@@ -81,7 +81,8 @@ yarn install
 You can start the server using this command:
 
 ```bash
-yarn dev
+docker-compose up --build -d redis
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
